@@ -10,7 +10,11 @@ include(cmake/ProjectOptions.cmake)
 include(cmake/Sanitizers.cmake)
 include(cmake/PreventInSourceBuilds.cmake)
 
+add_subdirectory(thirdparty)
+
 add_executable(${PROJECT_NAME} "src/main.cxx")
+
+target_link_libraries(${PROJECT_NAME} PRIVATE SDL3-static imgui-static)
 
 enable_sanitizers(${PROJECT_NAME} 
                     ${ENABLE_SANITIZER_ADDRESS} 

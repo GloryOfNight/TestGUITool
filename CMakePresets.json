@@ -5,7 +5,12 @@
       "name": "base",
       "hidden": true,
       "installDir": "${sourceDir}/install",
-      "binaryDir": "${sourceDir}/build"
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "SDL_SHARED": false,
+        "SDL_STATIC": true,
+        "SDL_TEST_LIBRARY": false
+      }
     },
     {
       "name": "linux64-base",
